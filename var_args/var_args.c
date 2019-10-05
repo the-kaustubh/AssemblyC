@@ -1,9 +1,4 @@
-int printf(const char *, ...);
-
 int n_sum(int n, ...) {
-  int d;
-  __asm__ ("mov 0x10(%%rbp), %0" :"=r" (d));
-  printf("%d\n", d);
   int sum=0, secondloop = n-5;
   int *po, *no;
   __asm__ (
@@ -31,10 +26,4 @@ int n_sum(int n, ...) {
     }
   }
   return sum;
-}
-
-int main(void) {
-  int sum = n_sum(10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-  printf("%d\n", sum);
-  return 0;
 }
